@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.zq.dao.UserDao">
+    <resultMap id="UserInfoMap" type="com.zq.domain.User">
+        <result column="id" property="id"/>
+        <result column="userName" property="userName"/>
+        <result column="passWord" property="passWord"/>
+        <result column="realName" property="realName"/>
+    </resultMap>
+
+    <select id="loginUser" resultType="com.zq.domain.User" parameterType="com.zq.domain.User">
+        select
+          id,
+          userName,
+          password,
+          realName
+        from
+          USER
+          where
+          USER.username= #{userName}
+          and
+          USER.password= #{passWord}
+    </select>
+
+    <select id="queryAllUsers" resultMap="UserInfoMap">
+        select
+          id,
+          userName,
+          password,
+          realName
+        from
+          user
+
+    </select>
+
+</mapper>

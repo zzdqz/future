@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script type="text/javascript"   src="../static/js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<form id="loginForUser">
+    用户名 : <input id="username" value="" type="text" name="username"><br>
+    密码 : <input id="password" value="" type="text" name="password"><br>
+    <input type="button"  id="send" onclick="login();" value="登录">
+</form>
+
+<script>
+
+
+    // 点击btn发送ajax请求
+    function login(){
+
+      var loginuser=  $('#loginForUser').serialize();
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        $.post("/userController/logina",
+            {"username":username,"password":password},
+            function (data) {
+            alert(data);
+        },"text");
+       /* // 1.创建xhr
+        var xhr;
+        if(window.XMLHttpRequest){    //常规，如果有，直接使用
+            xhr = new XMLHttpRequest();
+        }else{   //如果没有，老版本IE
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        // 2.绑定监听函数
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4){
+                if(xhr.status == 200){
+                    console.log(xhr.responseText)
+                    if(xhr.responseText == 1){
+                        ts.innerHTML = "该用户名已经被注册"
+                    }else if(xhr.responseText == 0){
+                        ts.innerHTML = "该用户名可以使用"
+                    }
+                }
+            }
+        };
+        // 3.建立连接
+        xhr.open("post","http://localhost/userController/logina?username=" + username+"&password="+password,true);
+        // 正则验证
+        // 4.发送请求
+        xhr.send(null);
+        console.info(xhr.getAllResponseHeaders());*/
+    }
+
+
+</script>
+
+</body>
+</html>
