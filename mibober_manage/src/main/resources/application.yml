@@ -1,0 +1,25 @@
+mybatis:
+    mapper-locations: classpath:mapper/*Mapper.xml
+server:
+    port: 8089
+    servlet:
+        context-path: /mibober
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: mibober
+        url: jdbc:mysql://127.0.0.1:60331/mibober?useUnicode=true&characterEncoding=utf8
+        username: root
+    devtools:
+        restart:
+            additional-paths: src/main/java
+            enabled: true
+            exclude: templates
+    freemarker:
+        cache: false
+    redis:
+        host: 127.0.0.1
+        port: 6379
+    thymeleaf:
+        prefix: classpath:/templates/
+        suffix: .html
