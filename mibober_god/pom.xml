@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.zzd</groupId>
-    <artifactId>springboot_mi</artifactId>
+    <artifactId>mibober_god</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot_mi</name>
-    <description>Demo project for Spring Boot</description>
+<!--    <name>springboot_mi</name>-->
+    <description>资源管理</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>

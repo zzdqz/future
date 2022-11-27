@@ -44,7 +44,6 @@ public class UserController {
         System.out.println("userControlle的logina方法进来了....");
         System.out.println("username : " + username + ".....");
         System.out.println("password : " + password + ".....");
-        log.debug("debug");
         User user = new User();
         user.setPassWord(password);
         user.setUserName(username);
